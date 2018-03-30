@@ -3,19 +3,19 @@
 This is my simple singly linked list module with basic functionality providing handling multiple c-strings in your projects.
 
 ## Usage
-- Include the module
+- **Include** the module
 
    ```C
    #include "SLList.h"
    ```
 
-- Declare list variable
+- Declare **list variable**
 
   ```C
   struct SLList source_list;
   ```
   
-- Initialize working with list
+- **Initialize** working with list
 
   ```C
   sll_init(&source_list);
@@ -23,37 +23,37 @@ This is my simple singly linked list module with basic functionality providing h
   
 - Do with your list what you want
 
-   - add new string to list's end 
+   - **add** new **string** to list's end 
    
       ```C
       sll_push(&source_list, "some_text");
       ```
       
-   - remove string from list's end 
+   - **remove string** from list's end 
    
       ```C
       sll_pop(&source_list);
       ```
       
-   - get list's size
+   - get list's **size**
    
       ```C 
       sll_size(&source_list);
       ```
       
-    - find out if the list is empty    
+    - find out if the list **is empty**
     
       ```C 
       sll_is_empty(&source_list);
       ```
   
-- Terminate working with list
+- **Terminate** working with list
 
    ```C
    sll_terminate(&source_list);
    ```
   
-> **Note:** all the functions, processing list, works with pointer on list. So I advice to use a pointer-variable. An example is given below:
+> **Note:** all the functions, processing list, works with *pointer on list*. So I advice to **use a pointer-variable**. An example is given below:
    
 ```C
 struct SLList *source_list = malloc(sizeof(struct SLList*));
