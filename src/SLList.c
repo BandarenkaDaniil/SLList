@@ -43,7 +43,7 @@ void sll_push(struct SLList* source_list, char* new_string)
     source_list->size++;
 }
 
-char* sll_pop(struct SLList* source_list/*, char** dest*/)
+void sll_pop(struct SLList* source_list)
 {
     struct Node *temp = source_list->head;
 
@@ -52,16 +52,11 @@ char* sll_pop(struct SLList* source_list/*, char** dest*/)
         temp = temp->next;
     }
 
-	char *result =  (char*)malloc(sizeof(char*) * (strlen(temp->next->value) + 1));
-	strcpy(result, temp->next->value);
-
     free(temp->next);
 
     temp->next = NULL;
 
     source_list->size--;
-
-	return result;
 }
 
 bool sll_is_empty(struct SLList* source_list)
