@@ -147,7 +147,7 @@ while (temp != NULL)
 }
 ```
 
-here you found last element, but you need to redirect previous Node "next" field to NULL.
+Here you found last element, but you need to redirect previous Node "next" field to NULL.
 because of list is singly-linked, you cannot address previous Node
 
 ```C
@@ -159,13 +159,13 @@ while (temp->next->next != NULL)
 }
 ```
 
-to resolve it I use a sentinel in the list's begin. Sentinel is an empty Node containing nothing. It provides me an opportunity to use code:
+To resolve it I use a sentinel in the list's begin. Sentinel is an empty Node containing nothing. It provides me an opportunity to use code:
 
 ```C
 temp->next = NULL;
 ```
 
-here temp pointers to penultimate element and we can delete the last element.
+Here temp pointers to penultimate element and we can delete the last element.
 
 The following is the structure of singly-linked list with sentinel node
 
