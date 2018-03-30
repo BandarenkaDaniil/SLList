@@ -1,6 +1,6 @@
-# Singly Linked List module
+# Singly-Linked List module
 
-This is my simple singly linked list module with basic functionality providing handling multiple c-strings in your projects.
+This is my simple singly-linked list module with basic functionality for handling multiple c-strings in your projects.
 
 ## Usage
 - **Include** the module
@@ -117,3 +117,58 @@ int main(int argc, char *argv[])
 */
 
 ```
+
+## Sentinel Using
+
+If you want to find some value in list, you have to use while loop.
+
+```C
+struct Node *temp = source_list->head; 
+
+while (temp != NULL)
+{
+	if (temp->value == some_found_value)
+	{
+		...
+	}
+
+	temp = temp->next;
+}
+```
+
+At the moment everything is allright. But if want to pop last element, you need to use:
+
+```C
+struct Node *temp = source_list->head;
+
+while (temp != NULL)
+{
+	temp = temp->next;
+}
+```
+
+here you found last element, but you need to redirect previous Node "next" field to NULL.
+because of list is singly-linked, you cannot address previous Node
+
+```C
+struct Node *temp = source_list->head;
+
+while (temp->next->next != NULL)
+{
+	temp = temp->next;
+}
+```
+
+to resolve it I use a sentinel in the list's begin. Sentinel is an empty Node containing nothing. It provides me an opportunity to use code:
+
+```C
+temp->next = NULL;
+```
+
+here temp pointers to penultimate element and we can delete the last element.
+
+The following is the structure of singly-linked list with sentinel node
+
+![alt text](https://github.com/BondarenkoDaniil/SLList/blob/master/list%20with%20sentinel%20structure.png?raw=true "Logo Title Text 1")
+
+To learn more about lists with sentinels you can visit this [Wikipage](https://en.wikipedia.org/wiki/Sentinel_node).
