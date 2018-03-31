@@ -53,7 +53,7 @@ This is my simple singly-linked list module with basic functionality for handlin
    sll_terminate(&source_list);
    ```
   
-> **Note:** all the functions, processing list, works with *pointer on list*. So I advice to **use a pointer-variable**. This makes & using unnecessary. An example is given below:
+> **Note:** all the functions, processing list, works with *pointer on list*. So I advice to **use a pointer-variable**. This makes **&** using **unnecessary**. An example is given below:
    
 ```C
 struct SLList *source_list = malloc(sizeof(struct SLList*));
