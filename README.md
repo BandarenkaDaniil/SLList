@@ -150,6 +150,8 @@ while (temp != NULL)
 Here you found last element, but you need to redirect previous Node "next" field to NULL.
 because of list is singly-linked, you cannot address previous Node
 
+To resolve it I use a sentinel in the list's begin. Sentinel is an empty Node containing nothing. It provides me an opportunity to use code:
+
 ```C
 struct Node *temp = source_list->head;
 
@@ -158,8 +160,6 @@ while (temp->next->next != NULL)
 	temp = temp->next;
 }
 ```
-
-To resolve it I use a sentinel in the list's begin. Sentinel is an empty Node containing nothing. It provides me an opportunity to use code:
 
 ```C
 temp->next = NULL;
